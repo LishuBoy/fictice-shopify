@@ -1,0 +1,112 @@
+body{
+    background-color: #E5E5E5 !important  ;
+}
+
+.my-container{
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0px 30px;
+}
+
+.hero{
+    position: relative;
+    margin: 40px auto;
+    img{
+        width: 100%;
+    }
+    
+    .swiper-pagination{
+        position: absolute !important;
+        left: unset !important;
+        right: -40px;
+        top: 50%;
+        transform: rotate(90deg);
+        max-height: 30px;
+        width: auto;
+        
+        .swiper-pagination-bullet{
+            background-color: #fff;
+            opacity: 1;
+            width: 30px;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            
+            &.swiper-pagination-bullet-active{
+                border: 1px solid #00000050;
+            }
+        }
+    }
+}
+
+.categories{
+    
+    .swiper-slide {
+    flex-shrink: 0;
+    width: auto; /* Permite que o tamanho do slide se ajuste ao conteúdo */
+    margin-right: 16px; /* Espaçamento entre os slides */
+}
+    
+    .card-categoria{
+        background-color: #fff;
+        display: flex;
+        padding: 10px 20px;
+        border-radius: 20px;
+        align-items: center;
+        gap: 20px;
+        text-decoration: #c6c6c6;
+        
+        img{
+            max-width: 50px;
+        }
+        
+        span{
+            color: #c6c6c6;
+            font-size: 18px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 700;
+        }
+    }
+}
+
+.categoria-slide {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.navegacao{
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .paginacao{
+        max-height: 30px;
+        width: auto;
+        
+        .swiper-pagination-bullet{
+            background-color: #fff;
+            opacity: 1;
+            width: 30px;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            
+            &.swiper-pagination-bullet-active{
+                border: 1px solid #00000050;
+            }
+        }
+    }
+    
+    .arrows{
+        display: flex;
+        gap: 20px;
+        
+        svg{
+            width: 40px;
+            height: 40px;
+        }
+    }
+    
+}
