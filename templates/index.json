@@ -47,10 +47,15 @@
     "categories_fictice_hCiVxN": {
       "type": "categories-fictice",
       "settings": {}
+    },
+    "products_carousel_fictice_P738WL": {
+      "type": "products-carousel-fictice",
+      "settings": {}
     }
   },
   "order": [
     "hero_fictice_hy74xJ",
-    "categories_fictice_hCiVxN"
+    "categories_fictice_hCiVxN",
+    "products_carousel_fictice_P738WL"
   ]
 }

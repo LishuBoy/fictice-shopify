@@ -1,0 +1,81 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+{
+  "name": "Coleção em Destaque - Swiper",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Selecionar Coleção"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "default": 6,
+      "label": "Número de Produtos"
+    },
+    {
+      "type": "range",
+      "id": "slides_per_view",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4,
+      "label": "Produtos por Slide"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coleção em Destaque - Swiper"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
+  <div class="my-container">
+    {% assign collection = section.settings.collection %}
+
+    {% if collection %}
+      <div class="swiper featured-collection-swiper">
+        <div class="swiper-wrapper">
+          {% for product in collection.products limit: section.settings.products_to_show %}
+            <div class="swiper-slide">
+              {% render 'card-product',
+                card_product: product,
+                media_aspect_ratio: 'adapt',
+                image_shape: 'default',
+                show_secondary_image: true,
+                show_vendor: false,
+                show_rating: true
+              %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="navegacao">
+        <div class="swiper-pagination3 paginacao"></div>
+        <div class="arrows">
+          <div class="anterior3">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+              <path d="m142-480 294 294q15 15 14.5 35T435-116q-15 15-35 15t-35-15L57-423q-12-12-18-27t-6-30q0-15 6-30t18-27l308-308q15-15 35.5-14.5T436-844q15 15 15 35t-15 35L142-480Z"/>
+            </svg>
+          </div>
+          <div class="proximo3">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+              <path d="M579-480 285-774q-15-15-14.5-35.5T286-845q15-15 35.5-15t35.5 15l307 308q12 12 18 27t6 30q0 15-6 30t-18 27L356-115q-15 15-35 14.5T286-116q-15-15-15-35.5t15-35.5l293-293Z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <p>Selecione uma coleção nas configurações da seção.</p>
+    {% endif %}
+  </div>
+</div>
