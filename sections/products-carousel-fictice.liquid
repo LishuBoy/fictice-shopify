@@ -78,7 +78,7 @@
     {% assign collection = section.settings.collection %}
 
     {% if collection %}
-      <div class="swiper featured-collection-swiper-{{ section.id }}">
+      <div class="swiper personalized-swiper featured-collection-swiper-{{ section.id }}">
         <div class="swiper-wrapper">
           {% for product in collection.products limit: section.settings.products_to_show %}
             <div class="swiper-slide">
@@ -89,7 +89,8 @@
                 show_secondary_image: true,
                 show_vendor: false,
                 show_rating: true,
-                quick_add: 'standard'
+                quick_add: 'standard',
+                horizontal_quick_add: true
               %}
             </div>
           {% endfor %}

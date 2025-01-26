@@ -1,0 +1,154 @@
+<div class="my-container layout-section">
+  <div class="row" style="flex-direction: {{ section.settings.row_direction }};">
+    <div class="imagem col-6">
+      {% if section.settings.section_image %}
+        <img
+          src="{{ section.settings.section_image | img_url: 'master' }}"
+          alt="{{ section.settings.section_image.alt }}"
+        >
+      {% endif %}
+    </div>
+    <div class="products-wrap-fictice col-6">
+      <div class="produto produto-1">
+        {% if section.settings.product_1 %}
+          <div class="custom-product-card">
+            {% assign product = section.settings.product_1 %}
+            {% assign first_image = product.images.first %}
+            {% assign second_image = product.images[1] %}
+
+            <div class="product-card-images">
+              {% if first_image %}
+                <img
+                  src="{{ first_image | img_url: '300x' }}"
+                  alt="{{ first_image.alt | escape }}"
+                  class="product-main-image"
+                >
+              {% endif %}
+
+              {% if second_image %}
+                <img
+                  src="{{ second_image | img_url: '300x' }}"
+                  alt="{{ second_image.alt | escape }}"
+                  class="product-hover-image"
+                >
+              {% endif %}
+            </div>
+
+            <div class="product-card-details">
+              <h3 class="product-title">{{ product.title }}</h3>
+
+              <div class="product-pricing">
+                {% if product.compare_at_price > product.price %}
+                  <div class="sale-badge">Sale</div>
+                  <span class="original-price">{{ product.compare_at_price | money }}</span>
+                  <span class="sale-price">{{ product.price | money }}</span>
+                {% else %}
+                  <span class="regular-price">{{ product.price | money }}</span>
+                {% endif %}
+              </div>
+
+              <div class="product-actions">
+                <form method="post" action="/cart/add">
+                  <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                  <button type="submit" class="add-to-cart-button">Add to Cart</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      <div class="produto produto-2">
+        {% if section.settings.product_2 %}
+          <div class="custom-product-card">
+            {% assign product = section.settings.product_2 %}
+            {% assign first_image = product.images.first %}
+            {% assign second_image = product.images[1] %}
+
+            <div class="product-card-images">
+              {% if first_image %}
+                <img
+                  src="{{ first_image | img_url: '300x' }}"
+                  alt="{{ first_image.alt | escape }}"
+                  class="product-main-image"
+                >
+              {% endif %}
+
+              {% if second_image %}
+                <img
+                  src="{{ second_image | img_url: '300x' }}"
+                  alt="{{ second_image.alt | escape }}"
+                  class="product-hover-image"
+                >
+              {% endif %}
+            </div>
+
+            <div class="product-card-details">
+              <h3 class="product-title">{{ product.title }}</h3>
+
+              <div class="product-pricing">
+                {% if product.compare_at_price > product.price %}
+                  <div class="sale-badge">Sale</div>
+                  <span class="original-price">{{ product.compare_at_price | money }}</span>
+                  <span class="sale-price">{{ product.price | money }}</span>
+                {% else %}
+                  <span class="regular-price">{{ product.price | money }}</span>
+                {% endif %}
+              </div>
+
+              <div class="product-actions">
+                <form method="post" action="/cart/add">
+                  <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                  <button type="submit" class="add-to-cart-button">Add to Cart</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Layout Section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "row_direction",
+      "label": "Row Direction",
+      "options": [
+        {
+          "value": "row",
+          "label": "Normal (Left to Right)"
+        },
+        {
+          "value": "row-reverse",
+          "label": "Reversed (Right to Left)"
+        }
+      ],
+      "default": "row"
+    },
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Section Image"
+    },
+    {
+      "type": "product",
+      "id": "product_1",
+      "label": "First Product"
+    },
+    {
+      "type": "product",
+      "id": "product_2",
+      "label": "Second Product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Layout Section"
+    }
+  ]
+}
+{% endschema %}
