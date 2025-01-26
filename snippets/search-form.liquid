@@ -1,0 +1,16 @@
+<form action="{{ routes.search_url }}" method="get" role="search" class="search-form">
+  <div class="field">
+    <input
+      type="text"
+      name="q"
+      id="{{ input_id }}"
+      class="search-input"
+      placeholder="Procurar"
+      aria-label="{{ 'general.search.placeholder' | t }}"
+    >
+    <button type="submit" class="search-button">
+      <span class="svg-wrapper">{{ 'icon-search.svg' | inline_asset_content }}</span>
+      <span class="visually-hidden">{{ 'general.search.submit' | t }}</span>
+    </button>
+  </div>
+</form>

@@ -20,16 +20,3 @@ var swiper2 = new Swiper('.mySwiper2', {
   },
   slideToClickedSlide: true, // Permite clicar no slide e passar diretamente para el
 });
-
-var swiper3 = new Swiper('.featured-collection-swiper', {
-  spaceBetween: 20,
-  slidesPerView: 4,
-  pagination: {
-    el: '.swiper-pagination3',
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '.proximo3',
-    prevEl: '.anterior3',
-  },
-});

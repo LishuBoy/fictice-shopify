@@ -1,0 +1,31 @@
+<nav>
+  <ul class="main-menu">
+    {% for link in linklists['main-menu'].links %}
+      <li class="menu-item">
+        <a href="{{ link.url }}" class="menu-link">{{ link.title }}</a>
+
+        {% if link.links != empty %}
+          <div class="dropdown-submenu">
+            <ul class="submenu my-container">
+              {% for sublink in link.links %}
+                <li class="submenu-item">
+                  <a href="{{ sublink.url }}" class="submenu-link">{{ sublink.title }}</a>
+
+                  {% if sublink.links != empty %}
+                    <ul class="sub-submenu">
+                      {% for sub_sublink in sublink.links %}
+                        <li class="sub-submenu-item">
+                          <a href="{{ sub_sublink.url }}" class="sub-submenu-link">{{ sub_sublink.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

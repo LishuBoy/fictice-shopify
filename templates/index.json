@@ -50,12 +50,33 @@
     },
     "products_carousel_fictice_P738WL": {
       "type": "products-carousel-fictice",
-      "settings": {}
+      "settings": {
+        "section_title": "Recentemente adicionados",
+        "show_section_button": true,
+        "section_button_text": "Ver todos",
+        "section_button_link": "shopify://collections",
+        "collection": "all",
+        "products_to_show": 6,
+        "slides_per_view": 4
+      }
+    },
+    "products_carousel_fictice_F9cTbP": {
+      "type": "products-carousel-fictice",
+      "settings": {
+        "section_title": "Smartphones",
+        "show_section_button": true,
+        "section_button_text": "Ver todos",
+        "section_button_link": "shopify://collections/smartphones",
+        "collection": "smartphones",
+        "products_to_show": 6,
+        "slides_per_view": 4
+      }
     }
   },
   "order": [
     "hero_fictice_hy74xJ",
     "categories_fictice_hCiVxN",
-    "products_carousel_fictice_P738WL"
+    "products_carousel_fictice_P738WL",
+    "products_carousel_fictice_F9cTbP"
   ]
 }
