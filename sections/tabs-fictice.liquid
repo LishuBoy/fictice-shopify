@@ -1,0 +1,133 @@
+{% schema %}
+{
+  "name": "Product Tabs",
+  "settings": [
+    {
+      "type": "select",
+      "id": "products_per_page",
+      "label": "Produtos por página",
+      "options": [
+        {
+          "value": "4",
+          "label": "4 Produtos"
+        },
+        {
+          "value": "8",
+          "label": "8 Produtos"
+        },
+        {
+          "value": "12",
+          "label": "12 Produtos"
+        }
+      ],
+      "default": "4"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection Tab",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Tabs"
+    }
+  ]
+}
+{% endschema %}
+<div class="tabs-fictice my-container">
+  <div class="product-tabs" data-products-per-page="{{ section.settings.products_per_page }}">
+    <div class="tabs-nav">
+      {% for block in section.blocks %}
+        {% if block.settings.collection %}
+          <button
+            class="tab-button {% if forloop.first %}active{% endif %}"
+            data-collection="{{ block.settings.collection.handle }}"
+          >
+            {{ block.settings.collection.title }}
+          </button>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="tabs-content">
+      <div class="products-grid"></div>
+      <div class="loading-spinner" style="display: none;">Carregando...</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const productsGrid = document.querySelector('.products-grid');
+    const loadingSpinner = document.querySelector('.loading-spinner');
+    const productsPerPage = document.querySelector('.product-tabs').dataset.productsPerPage;
+
+    async function fetchProducts(collectionHandle) {
+      loadingSpinner.style.display = 'block';
+      productsGrid.innerHTML = '';
+
+      try {
+        const response = await fetch(`/collections/${collectionHandle}?view=ajax&page=1`);
+        const html = await response.text();
+        productsGrid.innerHTML = html;
+      } catch (error) {
+        console.error('Erro ao carregar produtos:', error);
+        productsGrid.innerHTML = '<p>Erro ao carregar produtos</p>';
+      }
+
+      loadingSpinner.style.display = 'none';
+    }
+
+    tabButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach((btn) => btn.classList.remove('active'));
+        button.classList.add('active');
+        fetchProducts(button.dataset.collection);
+      });
+    });
+
+    if (tabButtons.length > 0) {
+      fetchProducts(tabButtons[0].dataset.collection);
+    }
+  });
+</script>
+
+<style>
+  .product-tabs {
+    margin: 2rem 0;
+  }
+
+  .tabs-nav {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .tab-button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    background: none;
+    cursor: pointer;
+  }
+
+  .tab-button.active {
+    background: #000;
+    color: #fff;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+</style>

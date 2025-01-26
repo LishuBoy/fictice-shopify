@@ -178,7 +178,7 @@ body{
     }
 }
 
-.personalized-swiper{
+.personalized-swiper, .tabs-fictice{
     margin-top: 50px;
     .swiper-slide{
         height: 100%;
