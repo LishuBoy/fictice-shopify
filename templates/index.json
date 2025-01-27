@@ -156,6 +156,12 @@
     "tabs_fictice_yJnzRq": {
       "type": "tabs-fictice",
       "blocks": {
+        "collection_iMU3b6": {
+          "type": "collection",
+          "settings": {
+            "collection": "all"
+          }
+        },
         "collection_eHQRGQ": {
           "type": "collection",
           "settings": {
@@ -206,6 +212,7 @@
         }
       },
       "block_order": [
+        "collection_iMU3b6",
         "collection_eHQRGQ",
         "collection_LPDGyn",
         "collection_qtrQWr",
@@ -216,7 +223,7 @@
         "collection_UM8dLM"
       ],
       "settings": {
-        "products_per_page": "12"
+        "products_per_page": "8"
       }
     }
   },
