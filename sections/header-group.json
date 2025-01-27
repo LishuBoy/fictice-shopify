@@ -17,15 +17,34 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
-            "link": ""
+            "announcement_text": "Bem vindo a nossa loja"
+          }
+        },
+        "announcement_gB9mXy": {
+          "type": "announcement",
+          "settings": {
+            "announcement_text": "Frete grátis em compras acima de R$600,00"
+          }
+        },
+        "announcement_Ag6HdM": {
+          "type": "announcement",
+          "settings": {
+            "announcement_text": "Descontos de até 30%"
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement_gB9mXy",
+        "announcement_Ag6HdM"
       ],
-      "settings": {}
+      "settings": {
+        "slide_duration": 5,
+        "email": "fictice@store.com.br",
+        "instagram_link": "https://caique.online",
+        "facebook_link": "https://www.facebook.com/caique.carvalho.526/",
+        "whatsapp_link": "https://wa.link/omlo2j"
+      }
     },
     "header": {
       "type": "header",
@@ -36,8 +55,10 @@
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
+        "menu_color_scheme": "",
         "enable_country_selector": true,
         "enable_language_selector": true,
+        "enable_customer_avatar": true,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 20,
