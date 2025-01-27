@@ -46,6 +46,66 @@
     },
     "categories_fictice_hCiVxN": {
       "type": "categories-fictice",
+      "blocks": {
+        "collection_h9LT8i": {
+          "type": "collection",
+          "settings": {
+            "collection": "smartphones"
+          }
+        },
+        "collection_LfhMYp": {
+          "type": "collection",
+          "settings": {
+            "collection": "notebooks"
+          }
+        },
+        "collection_ypqJeY": {
+          "type": "collection",
+          "settings": {
+            "collection": "games"
+          }
+        },
+        "collection_dY7c3e": {
+          "type": "collection",
+          "settings": {
+            "collection": "computadores"
+          }
+        },
+        "collection_aX9Hg9": {
+          "type": "collection",
+          "settings": {
+            "collection": "audio"
+          }
+        },
+        "collection_jdAbLj": {
+          "type": "collection",
+          "settings": {
+            "collection": "video"
+          }
+        },
+        "collection_iq3NLe": {
+          "type": "collection",
+          "settings": {
+            "collection": "eletrodomesticos"
+          }
+        },
+        "collection_rgwgyT": {
+          "type": "collection",
+          "settings": {
+            "collection": "cameras"
+          }
+        }
+      },
+      "block_order": [
+        "collection_h9LT8i",
+        "collection_LfhMYp",
+        "collection_ypqJeY",
+        "collection_dY7c3e",
+        "collection_aX9Hg9",
+        "collection_jdAbLj",
+        "collection_iq3NLe",
+        "collection_rgwgyT"
+      ],
       "settings": {}
     },
     "products_carousel_fictice_P738WL": {
@@ -56,8 +116,8 @@
         "section_button_text": "Ver todos",
         "section_button_link": "shopify://collections",
         "collection": "all",
-        "products_to_show": 6,
-        "slides_per_view": 4
+        "products_to_show": 10,
+        "slides_per_view": 5
       }
     },
     "products_carousel_fictice_F9cTbP": {
@@ -68,8 +128,95 @@
         "section_button_text": "Ver todos",
         "section_button_link": "shopify://collections/smartphones",
         "collection": "smartphones",
-        "products_to_show": 6,
-        "slides_per_view": 4
+        "products_to_show": 10,
+        "slides_per_view": 5
+      }
+    },
+    "products_carousel_fictice_34WAVJ": {
+      "type": "products-carousel-fictice",
+      "settings": {
+        "section_title": "Smartphones",
+        "show_section_button": true,
+        "section_button_text": "Ver todos",
+        "section_button_link": "shopify://collections",
+        "collection": "all",
+        "products_to_show": 10,
+        "slides_per_view": 5
+      }
+    },
+    "grid_fictice_NBtFQR": {
+      "type": "grid-fictice",
+      "settings": {
+        "row_direction": "row",
+        "section_image": "shopify://shop_images/Rectangle_3.png",
+        "product_1": "robo-aspirador-e-passa-pano-smart-900-127v-preto-kbsf009",
+        "product_2": "monitor-gamer-curvo-lg-ultragear-lg-34-ultrawide-160hz-wqhd-1ms-displayport-e-hdmi-amd-freesync-premium-hdr10-99-srgb-34gp63a-b"
+      }
+    },
+    "tabs_fictice_yJnzRq": {
+      "type": "tabs-fictice",
+      "blocks": {
+        "collection_eHQRGQ": {
+          "type": "collection",
+          "settings": {
+            "collection": "smartphones"
+          }
+        },
+        "collection_LPDGyn": {
+          "type": "collection",
+          "settings": {
+            "collection": "games"
+          }
+        },
+        "collection_qtrQWr": {
+          "type": "collection",
+          "settings": {
+            "collection": "notebooks"
+          }
+        },
+        "collection_qwRxXz": {
+          "type": "collection",
+          "settings": {
+            "collection": "cameras"
+          }
+        },
+        "collection_MQCgYz": {
+          "type": "collection",
+          "settings": {
+            "collection": "audio"
+          }
+        },
+        "collection_8PRaTt": {
+          "type": "collection",
+          "settings": {
+            "collection": "video"
+          }
+        },
+        "collection_6whffk": {
+          "type": "collection",
+          "settings": {
+            "collection": "eletrodomesticos"
+          }
+        },
+        "collection_UM8dLM": {
+          "type": "collection",
+          "settings": {
+            "collection": "computadores"
+          }
+        }
+      },
+      "block_order": [
+        "collection_eHQRGQ",
+        "collection_LPDGyn",
+        "collection_qtrQWr",
+        "collection_qwRxXz",
+        "collection_MQCgYz",
+        "collection_8PRaTt",
+        "collection_6whffk",
+        "collection_UM8dLM"
+      ],
+      "settings": {
+        "products_per_page": "12"
       }
     }
   },
@@ -77,6 +224,9 @@
     "hero_fictice_hy74xJ",
     "categories_fictice_hCiVxN",
     "products_carousel_fictice_P738WL",
-    "products_carousel_fictice_F9cTbP"
+    "products_carousel_fictice_F9cTbP",
+    "products_carousel_fictice_34WAVJ",
+    "grid_fictice_NBtFQR",
+    "tabs_fictice_yJnzRq"
   ]
 }
