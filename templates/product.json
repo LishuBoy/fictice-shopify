@@ -59,7 +59,7 @@
         "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping & Returns",
+            "heading": "Frete",
             "icon": "truck",
             "content": "",
             "page": ""
@@ -68,7 +68,7 @@
         "share": {
           "type": "share",
           "settings": {
-            "share_label": "Share"
+            "share_label": "Compartilhar"
           }
         }
       },
@@ -85,8 +85,8 @@
         "share"
       ],
       "settings": {
-        "enable_sticky_info": true,
-        "color_scheme": "",
+        "enable_sticky_info": false,
+        "color_scheme": "scheme-02703d10-b660-4c0f-ab12-7aa98e588956",
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
@@ -103,11 +103,11 @@
     "related-products": {
       "type": "related-products",
       "settings": {
-        "heading": "You may also like",
+        "heading": "Você pode gostar",
         "heading_size": "h2",
         "products_to_show": 4,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-02703d10-b660-4c0f-ab12-7aa98e588956",
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
